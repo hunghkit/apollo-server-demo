@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
-import { IUser, IUserModel, ICondition } from "./types";
+import { IUser, IUserInput, IUserModel, ICondition } from "./types";
 
 export const UserSchema = new Schema({
   username: { type: String, required: true, unique: true },
@@ -21,11 +21,11 @@ UserSchema.statics.getBy = async function(where: ICondition) {
   return await this.findOne(where || {});
 };
 
-UserSchema.statics.createData = async function(user: IUser) {
+UserSchema.statics.createData = async function(user: any) {
   return await this.create(user);
 };
 
-UserSchema.statics.updateData = async function(id: string, user: IUser) {
+UserSchema.statics.updateData = async function(id: string, user: IUserInput) {
   try {
     const current = this.findOne({ _id: id });
 

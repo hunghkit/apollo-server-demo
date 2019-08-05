@@ -7,6 +7,7 @@
     "rules": {
       "ordered-imports": [false],
       "no-console": [true, "warning"],
+      "no-unused-expression": [false],
       "object-literal-sort-keys": [false]
     },
     "rulesDirectory": []

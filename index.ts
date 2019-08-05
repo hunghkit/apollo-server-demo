@@ -7,12 +7,12 @@ import "./src/model"
 import User from "./src/User/model";
 
 if (process.env.NODE_ENV !== "production") {
-    require("dotenv");
+  require("dotenv");
 }
 
 const server = new ApolloServer({ 
-    resolvers, 
-    typeDefs,
+  resolvers,
+  typeDefs,
 });
 
 server.listen()

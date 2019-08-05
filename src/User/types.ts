@@ -4,13 +4,13 @@ export interface IUser extends Document {
   username: string;
   password: string;
   name: string;
-  picture: string;
+  picture?: string;
 }
 
 export interface ICondition {
-  username: string;
-  name: string;
-  picture: string;
+  username?: string;
+  name?: string;
+  picture?: string;
 }
 
 export interface IUserModel extends Model<IUser> {
@@ -19,6 +19,13 @@ export interface IUserModel extends Model<IUser> {
   updateData(id: string, user: IUser): IUser;
   getBy(where: ICondition): IUser;
   getAll(where: ICondition, limit: number, page: number): [IUser];
+}
+
+export interface IUserInput {
+  username: IUser["username"];
+  password: IUser["password"];
+  name: IUser["name"];
+  picture?: IUser["picture"];
 }
 
 export const typeDef = `
