@@ -1,7 +1,5 @@
-export default {
-  Query: {
-    testMessage: (): string => {
-      return 'Hello World!';
-    }
-  }
-};
+import userResolvers from "./User/resolvers";
+
+export default [
+  userResolvers,
+];

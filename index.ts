@@ -1,13 +1,13 @@
-import { ApolloServer } from 'apollo-server';
+import { ApolloServer } from "apollo-server";
 
-import resolvers from './src/resolvers';
-import typeDefs from './src/schemas';
-import './src/model'
+import resolvers from "./src/resolvers";
+import typeDefs from "./src/schemas";
+import "./src/model"
 
-import User from './src/User/model';
+import User from "./src/User/model";
 
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv');
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv");
 }
 
 const server = new ApolloServer({ 

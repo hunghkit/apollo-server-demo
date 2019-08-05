@@ -1,10 +1,17 @@
-import { gql } from 'apollo-server';
+import {
+  typeDef as User,
+  typeQuery as userQuery,
+  typeMutation as userMutation,
+} from "./User/types";
 
-export default gql`
+const Query = `
   type Query {
-    """
-    Test Message. 
-    """
-    testMessage: String!
+    ${userQuery}
+  }
+
+  type Mutation {
+    ${userMutation}
   }
 `;
+
+export default [Query, User];
